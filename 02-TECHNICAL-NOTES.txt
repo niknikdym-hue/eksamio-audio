@@ -1,0 +1,59 @@
+ТЕХНИЧЕСКИЕ РЕШЕНИЯ
+Проверено по актуальным источникам 2026-08-15.
+
+ОСНОВНАЯ БИБЛИОТЕКА
+MLX-Audio
+https://github.com/Blaizzy/mlx-audio
+
+Почему:
+— оптимизирована для Apple Silicon;
+— поддерживает Qwen3-TTS;
+— поддерживает квантизированные модели;
+— устанавливается через pip;
+— позволяет сохранять WAV локально.
+
+ОСНОВНАЯ МОДЕЛЬ
+mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-4bit
+https://huggingface.co/mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-4bit
+
+Причина:
+— 0.6B, а не 1.7B;
+— 4-bit;
+— формат MLX;
+— заявленный размер репозитория модели около 1.69 GB;
+— лицензия модели указана как Apache-2.0;
+— русский язык входит в поддерживаемые Qwen3-TTS языки.
+
+КРИТИЧЕСКАЯ ОГОВОРКА О КАЧЕСТВЕ
+У Qwen3-TTS 0.6B CustomVoice русский язык поддерживается,
+но среди 9 встроенных голосов НЕТ русского нативного диктора.
+
+Голоса:
+Vivian — Chinese
+Serena — Chinese
+Uncle_Fu — Chinese
+Dylan — Chinese/Beijing
+Eric — Chinese/Sichuan
+Ryan — English
+Aiden — English
+Ono_Anna — Japanese
+Sohee — Korean
+
+Поэтому первый CustomVoice WAV — только технический тест:
+может ли M1/8 GB стабильно генерировать русскую речь.
+
+Для реальной проверки аудиокниги после этого разумный следующий кандидат:
+mlx-community/Qwen3-TTS-12Hz-0.6B-Base-4bit
+с КОРОТКИМ РАЗРЕШЁННЫМ русским голосовым референсом и точной расшифровкой.
+
+Не клонировать без разрешения голоса дикторов, актёров, публичных лиц или третьих лиц.
+
+ОФИЦИАЛЬНЫЕ ИСХОДНИКИ
+Qwen3-TTS:
+https://github.com/QwenLM/Qwen3-TTS
+MLX-Audio:
+https://github.com/Blaizzy/mlx-audio
+MLX 0.6B CustomVoice 4-bit:
+https://huggingface.co/mlx-community/Qwen3-TTS-12Hz-0.6B-CustomVoice-4bit
+MLX 0.6B Base 4-bit (только будущий этап):
+https://huggingface.co/mlx-community/Qwen3-TTS-12Hz-0.6B-Base-4bit
